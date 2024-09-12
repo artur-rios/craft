@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+
+    <title>Buttons</title>
+    <meta name="description" content="🤓">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="Canvas">
+    <meta name="color-scheme" content="light dark">
+
+    <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
+
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/buttons.css">
+
+    <script type="module" src="../src/components/button/c-button.js"></script>
+</head>
+
+<body>
+<section>
+    <h2>9 c-button types</h2>
+    <p>Unified modern style, visual differences reinforce purpose.</p>
+</section>
+
+<article class="fluid-flex">
+    <c-button text="Default"></c-button>
+    <c-button text="Icon " icon="cloud"></c-button>
+    <c-button type="submit" text="Submit"></c-button>
+    <c-button type="button" text="Type Button"></c-button>
+    <c-button type="reset" text="Reset"></c-button>
+    <c-button disabled text="Disabled"></c-button>
+    <c-button type="x" text="Custom"></c-button>
+    <c-button type="file"></c-button>
+</article>
+
+<section>
+    <h2>When inside a <code>&#60;form&#62;</code></h2>
+    <p>Untyped buttons visually match their new contextual default of type submit.</p>
+</section>
+
+<form action="" class="fluid-flex">
+    <c-button text="Default"></c-button>
+    <c-button text="Icon " icon="cloud"></c-button>
+    <c-button type="submit" text="Submit"></c-button>
+    <c-button type="c-button" text="Type Button"></c-button>
+    <c-button type="reset" text="Reset"></c-button>
+    <c-button disabled text="Disabled"></c-button>
+    <c-button type="x" text="Large Custom"></c-button>
+    <c-button type="file"></c-button>
+</form>
+
+<script>
+    document.querySelector("c-button").addEventListener("c-click", (event) => {
+        console.log(event);
+    });
+</script>
+
+</body>
+</html>

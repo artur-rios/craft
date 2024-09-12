@@ -1,0 +1,53 @@
+html {
+    block-size: 100%;
+    font-family: system-ui, sans-serif;
+    background-color: hsl(210deg 17% 98%);
+
+    @media (prefers-color-scheme: dark) {
+        background-color: hsl(210deg 11% 15%);
+    }
+}
+
+body {
+    min-block-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5vmin;
+    padding-inline: 5vmin;
+
+    @media (width <= 720px) {
+        padding-block: 10vmin;
+    }
+}
+
+body, h2, p {
+    margin: 0;
+}
+
+form {
+    background: hsl(210deg 16% 93%);
+    border: 1px solid hsl(210deg 14% 89%);
+    border-radius: .5ch;
+
+    @media (prefers-color-scheme: dark) {
+        background: hsl(210deg 10% 23%);
+        border: 1px solid hsl(210deg 9% 31%);
+    }
+}
+
+.fluid-flex {
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    align-items: flex-start;
+    padding: 2ch;
+    gap: 2ch;
+}
+
+section {
+    display: grid;
+    gap: 1ch;
+    text-align: center;
+}

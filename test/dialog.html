@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+
+    <title>Dialog</title>
+    <meta name="description" content="🤓">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="Canvas">
+    <meta name="color-scheme" content="light dark">
+
+    <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
+
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/buttons.css">
+
+    <script type="module" src="../src/components/button/c-button.js"></script>
+    <script type="module" src="../src/components/dialog/c-dialog.js"></script>
+</head>
+
+<body>
+
+<c-dialog size="mini"></c-dialog>
+
+<section>
+    <h2>Dialog</h2>
+    <p>Click the button to open the dialog demo</p>
+</section>
+
+<article class="fluid-flex">
+    <c-button text="Open dialog"></c-button>
+</article>
+
+<script>
+    document.querySelector("c-button").addEventListener("c-click", (event) => {
+        document.querySelector("c-dialog").open();
+    });
+</script>
+
+</body>
+</html>
