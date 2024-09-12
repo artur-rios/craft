@@ -106,10 +106,8 @@ dialog {
                 flex-wrap: wrap;
                 gap: var(--size-3);
                 padding-inline-start: 0;
-
-                &:only-child {
-                    margin-inline-start: auto;
-                }
+                width: 100%;
+                justify-content: center;
 
                 @media (max-width: 410px) {
                     & button[type="reset"] {
@@ -129,14 +127,18 @@ dialog {
     }
 }
 
+.icon {
+    height: 24px;
+    width: 24px;
+}
 
-.warning-message {
+.message {
     display: grid;
     grid-template-columns: var(--size-fluid-3) 1fr;
     gap: var(--size-3);
     align-items: center;
 
-    & > svg {
+    & > div {
         inline-size: 100%;
         stroke: var(--text-2);
     }

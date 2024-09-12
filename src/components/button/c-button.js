@@ -9,9 +9,15 @@ class cButton extends HTMLElement {
     connectedCallback() {
         const shadow = this.shadowRoot;
 
+        const iconsLink = document.createElement('link');
+        iconsLink.setAttribute('rel', 'stylesheet');
+        iconsLink.setAttribute('href', "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
+
         const styleLink = document.createElement('link');
         styleLink.setAttribute('rel', 'stylesheet');
         styleLink.setAttribute('href', new URL('styles.css', import.meta.url).href);
+
+        shadow.appendChild(iconsLink);
         shadow.appendChild(styleLink);
 
         this.button = document.createElement(this.type === 'file' ? 'input' : 'button');
@@ -83,14 +89,17 @@ class cButton extends HTMLElement {
 
     updateIcon() {
         if (this.icon) {
-            let icon = this.shadowRoot.querySelector('span[data-icon]');
+            let icon = this.shadowRoot.querySelector('span');
 
-            if (!icon) {
+            if (!icon && this.button) {
                 icon = document.createElement('span');
                 this.button.appendChild(icon);
             }
 
-            icon.setAttribute("data-icon", this.icon);
+            if (icon) {
+                icon.className = "material-symbols-outlined";
+                icon.textContent = this.icon;
+            }
         }
     }
 }
